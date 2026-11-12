@@ -1,0 +1,26 @@
+# ==========================================
+# CYBERFORGE: SWARM-SEC INGRESS GATEWAY
+# ==========================================
+# TODO (Kaif): Build a multi-stage, production-grade Docker image.
+# Security Requirements:
+# 1. Must use a distroless or ultra-minimal runtime image.
+# 2. Must execute as a non-root user.
+# 3. Final image size must be strictly minimized.
+
+FROM python:3.11-slim AS builder
+WORKDIR /app
+# Implement dependency caching and compilation here
+
+# ------------------------------------------
+# FINAL RUNTIME STAGE
+# ------------------------------------------
+FROM gcr.io/distroless/python3
+WORKDIR /app
+
+# Copy artifacts from builder
+# COPY --from=builder /app /app
+
+# Set non-root user execution
+# USER nonroot
+
+ENTRYPOINT ["python", "-m", "services.ingress_gateway.crypto.verifier"]
