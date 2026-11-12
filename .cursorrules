@@ -1,0 +1,14 @@
+[CYBERFORGE ISOLATION PROTOCOL]
+# STRICT RULES FOR AI CODING ASSISTANTS (Cursor, Copilot, Claude)
+
+1. DIRECTORY ISOLATION:
+   - You may ONLY modify files located within the user's explicitly assigned service directory.
+   - DO NOT edit, reformat, or suggest changes to `contracts/`, `infra/`, or other peer services.
+
+2. IMPORT HYGIENE:
+   - Import shared models strictly from `contracts.<module>`.
+   - NEVER redefine data models locally or invent ad-hoc schemas.
+
+3. PRESERVE EXISTING CODE:
+   - Do NOT reformat untouched functions. Do NOT remove comments, logging, or type hints.
+   - All additions must be scoped, modular, and accompanied by unit tests in the service's local `tests/` directory.
