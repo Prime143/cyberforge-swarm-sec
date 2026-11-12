@@ -1,0 +1,13 @@
+# ==========================================
+# CYBERFORGE: ARCHITECTURAL OWNERSHIP
+# ==========================================
+# This file enforces that the Lead Architect (Prime143)
+# must explicitly approve any changes to core infrastructure.
+
+# 1. Default owner for the entire repository
+*               @Prime143
+
+# 2. Strict lockdown on immutable contracts and CI pipelines
+/contracts/     @Prime143
+/.github/       @Prime143
+/.cursorrules   @Prime143
